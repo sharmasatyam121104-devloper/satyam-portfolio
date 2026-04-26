@@ -76,7 +76,7 @@
 }
 
 .animate-scrollY {
-  animation: scrollY 15s linear infinite;
+  animation: scrollY 5s linear infinite;
 }
 
 

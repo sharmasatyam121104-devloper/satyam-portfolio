@@ -6,6 +6,15 @@ import { Menu, X } from 'lucide-react'; // Icons ke liye: npm install lucide-rea
 const MainHome = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = "/pdf/fakeCV.pdf";
+  link.download = "Satyam_CV.pdf";
+  document.body.appendChild(link); // important
+  link.click();
+  document.body.removeChild(link);
+};
+
   return (
     <div className="min-h-screen w-full relative overflow-hidden bg-[#0a0a0a]">
       {/* Background Glow Effect */}
@@ -37,7 +46,6 @@ const MainHome = () => {
               <Link to="contact" smooth duration={500} offset={-80} className='hover:text-rose-500 cursor-pointer'>Contact</Link>
             </div>
             <div className='text-gray-100 flex gap-6 font-bold'>
-              <button className='border border-gray-600 rounded-3xl w-32 h-12 hover:bg-bio-pink cursor-pointer transition'>Let's Talk</button>
               <button className='bg-bio-pink rounded-3xl w-32 h-12 cursor-pointer transition'>Join Now</button>
             </div>
           </div>
@@ -99,14 +107,14 @@ const MainHome = () => {
 
               {/* CV & Socials */}
               <div className='mt-10 lg:mt-16 flex flex-col lg:flex-row items-center gap-8 lg:gap-12'>
-                <button className="bg-[#e60b3e] hover:bg-[#e82448] text-white px-8 py-3 rounded-3xl cursor-pointer transition w-full lg:w-auto">
+                <button onClick={handleDownload} className="bg-[#e60b3e] active:scale-30 hover:bg-[#e82448] text-white px-8 py-3 rounded-3xl cursor-pointer transition w-full lg:w-auto">
                   Download CV <i className="ri-download-2-line"></i>
                 </button>
                 <div className='flex gap-3'>
-                  <Link to={"#"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-facebook-line font-bold text-[#FF014F] text-xl"></i></Link>
-                  <Link to={"#"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-twitter-line font-bold text-[#FF014F] "></i></Link>
-                  <Link to={"#"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-linkedin-line font-bold text-[#FF014F]"></i></Link>
-                  <Link to={"#"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-instagram-line font-bold text-[#FF014F]"></i></Link>
+                  <Link to={"https://github.com/sharmasatyam121104-devloper"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-github-line font-bold text-[#FF014F] text-xl"></i></Link>
+                  <Link to={"https://x.com/SatyamShar44494"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-twitter-line font-bold text-[#FF014F] "></i></Link>
+                  <Link to={"https://www.linkedin.com/in/satyam-sharma-dev04"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-linkedin-line font-bold text-[#FF014F]"></i></Link>
+                  <Link to={"https://www.instagram.com/satyam548sharma"} className='border border-gray-500 rounded-full h-10 w-10 flex justify-center items-center hover:bg-[#f4b3bc]'><i className="ri-instagram-line font-bold text-[#FF014F]"></i></Link>
                 </div>
               </div>
           </div>

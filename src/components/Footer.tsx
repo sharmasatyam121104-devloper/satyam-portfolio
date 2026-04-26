@@ -3,6 +3,23 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import Logo from "./Logo";
 
 export default function Footer() {
+
+    const openWhatsApp = () => {
+        window.open(
+            "https://wa.me/6306424265?text=Hello%20Satyam%2C%20I%20want%20to%20connect",
+            "_blank"
+        );
+    };
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/pdf/fakeCV.pdf";
+        link.download = "Satyam_CV.pdf";
+        document.body.appendChild(link); 
+        link.click();
+        document.body.removeChild(link);
+    };
+
   return (
     <footer className="bg-[linear-gradient(to_bottom_right,#2a000a,black,#1a0a10)] text-white py-10 md:py-10 mb-16 border-b-4 border-[#FF014F] rounded-b-lg md:h-140 h-auto">
 
@@ -44,16 +61,16 @@ export default function Footer() {
 
           {/* SOCIAL */}
           <div className="flex gap-8">
-            <Link to="/" className="text-gray-400 hover:text-[#FF014F] transition">
+            <Link to="https://github.com/sharmasatyam121104-devloper" className="text-gray-400 hover:text-[#FF014F] transition">
               <FaGithub size={28} />
             </Link>
-            <Link to="/" className="text-gray-400 hover:text-[#FF014F] transition">
+            <Link to="https://www.linkedin.com/in/satyam-sharma-dev04" className="text-gray-400 hover:text-[#FF014F] transition">
               <FaLinkedin size={28} />
             </Link>
-            <Link to="/" className="text-gray-400 hover:text-[#FF014F] transition">
+            <Link to="https://x.com/SatyamShar44494" className="text-gray-400 hover:text-[#FF014F] transition">
               <FaTwitter size={28} />
             </Link>
-            <Link to="/" className="text-gray-400 hover:text-[#FF014F] transition">
+            <Link to="https://www.instagram.com/satyam548sharma" className="text-gray-400 hover:text-[#FF014F] transition">
               <FaInstagram size={28} />
             </Link>
           </div>
@@ -75,8 +92,8 @@ export default function Footer() {
 
           {/* RIGHT LINKS (Order 3 on mobile) */}
           <div className="flex gap-6 order-3">
-            <Link to="/" className="hover:text-[#FF014F]">Resume</Link>
-            <Link to="/" className="hover:text-[#FF014F]">Contact Me</Link>
+            <button onClick={handleDownload} className="hover:text-[#FF014F]">Resume</button>
+            <button onClick={openWhatsApp} className="hover:text-[#FF014F]">Contact Me</button>
           </div>
 
         </div>

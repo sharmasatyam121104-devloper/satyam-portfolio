@@ -33,6 +33,14 @@ const Contact = () => {
     });
   };
 
+
+    const openWhatsApp = () => {
+        window.open(
+            "https://wa.me/6306424265?text=Hello%20Satyam%2C%20I%20want%20to%20connect",
+            "_blank"
+        );
+    };
+
   return (
     <div className="px-6 md:px-28 py-10 md:py-20 text-white">
 
@@ -159,7 +167,7 @@ const Contact = () => {
             <p className="text-gray-400 mt-2 text-sm max-w-xs mx-auto lg:mx-0">
               Chat about full-stack development or real-time systems.
             </p>
-            <button className="mt-8 bg-rose-500 px-6 py-3 rounded-full hover:opacity-90 transition text-sm font-bold">
+            <button onClick={openWhatsApp} className="mt-8 bg-rose-500 px-6 py-3 rounded-full hover:opacity-90 transition text-sm font-bold">
               Start Conversation →
             </button>
           </div>

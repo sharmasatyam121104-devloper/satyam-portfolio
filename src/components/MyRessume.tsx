@@ -1,8 +1,9 @@
 import { BsFillLaptopFill } from "react-icons/bs";
-import { CgFacebook, CgInstagram, CgTwitter } from "react-icons/cg";
+import { CgInstagram, CgTwitter } from "react-icons/cg";
 import { CiLinkedin } from "react-icons/ci";
 import { FaVimeoV, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Link as SLink } from "react-scroll";
 
 import {
   SiNodedotjs,
@@ -49,6 +50,13 @@ const MyRessume = () => {
     { name: "ShadCN", icon: <SiShadcnui color="#ffffff" /> },
   ];
 
+    const openWhatsApp = () => {
+        window.open(
+            "https://wa.me/6306424265?text=Hello%20Satyam%2C%20I%20want%20to%20connect",
+            "_blank"
+        );
+    };
+
   return (
     <div className="min-h-screen bg-[#0d0d0d] w-11/12 mx-auto rounded-[30px] md:rounded-[60px] p-2 mt-4">
       {/* Header Section */}
@@ -58,7 +66,7 @@ const MyRessume = () => {
           <span className="absolute top-0 right-0 w-2 h-2 border-r border-t border-slate-700"></span>
           <span className="absolute bottom-0 left-0 w-2 h-2 border-l border-b border-slate-700"></span>
           <span className="absolute bottom-0 right-0 w-2 h-2 border-r border-b border-slate-700"></span>
-          15+ YEARS OF EXPERIENCE
+          1.5+ YEARS OF EXPERIENCE
         </div>
         <h2 className="text-3xl md:text-5xl font-bold text-[#D6DAF0] mb-6 text-center">
           My Resume
@@ -106,15 +114,29 @@ const MyRessume = () => {
 
           <h2 className="text-2xl md:text-3xl text-[#D6DAF0] mb-8 md:mb-12 font-bold text-center">Stay With Me</h2>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {[CgFacebook, CgTwitter, CiLinkedin, CgInstagram].map((Icon, idx) => (
-              <Link key={idx} to="/" className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-[#222] flex items-center justify-center text-[#FF014F] hover:bg-[#FF014F] hover:text-white transition">
-                <Icon size={24} />
+            {[
+                {Icon:CgInstagram, link: "https://www.instagram.com/satyam548sharma"},
+                {Icon:CgTwitter, link: "https://x.com/SatyamShar44494"},
+                {Icon:CiLinkedin, link: "https://www.linkedin.com/in/satyam-sharma-dev04"}, 
+                {Icon: CgInstagram, link: "https://www.instagram.com/satyam548sharma"}
+            ].map((data, idx) => (
+              <Link key={idx} to={data.link} className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-[#222] flex items-center justify-center text-[#FF014F] hover:bg-[#FF014F] hover:text-white transition">
+                <data.Icon size={24} />
               </Link>
             ))}
           </div>
-          <Link to="/profile" className="inline-block bg-[#FF014F] text-[#D6DAF0] px-6 py-3 rounded-full hover:opacity-90 transition mt-4 md:mt-12 text-sm md:text-base">
+            <SLink
+            to="home"
+            smooth={true}
+            duration={500}
+            offset={-80}
+            spy={true}
+            activeClass="text-[#FF014F]"
+            className="inline-block bg-[#FF014F] text-[#D6DAF0] px-6 py-3 rounded-full hover:opacity-90 transition mt-4 md:mt-12 text-sm md:text-base cursor-pointer"
+            >
             View My Profile →
-          </Link>
+            </SLink>
+
         </div>
       </div>
 
@@ -232,7 +254,7 @@ const MyRessume = () => {
           <span className="absolute bottom-0 left-0 w-6 h-6 border-l-2 border-b-2 border-[#FF014F]"></span>
           <span className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-[#FF014F]"></span>
           <h2 className="text-xl text-white mb-6">Stay With Me</h2>
-          <button className="bg-[#FF014F] text-white px-6 py-3 rounded-full text-sm">
+          <button onClick={openWhatsApp} className="bg-[#FF014F] text-white px-6 py-3 rounded-full text-sm">
             Get In Touch →
           </button>
         </div>

@@ -36,7 +36,10 @@ const [showNavbar, setShowNavbar] = useState(false);
       >
         <NavBar />
       </div>
-<MainHome />
+      <div id="home">
+       <MainHome />
+      </div>
+
 
 <div id="services">
   <Services />
