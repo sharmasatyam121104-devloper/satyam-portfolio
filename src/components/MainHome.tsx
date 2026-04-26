@@ -6,14 +6,14 @@ import { Menu, X } from 'lucide-react'; // Icons ke liye: npm install lucide-rea
 const MainHome = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const handleDownload = () => {
-  const link = document.createElement("a");
-  link.href = "/pdf/fakeCV.pdf";
-  link.download = "Satyam_CV.pdf";
-  document.body.appendChild(link); // important
-  link.click();
-  document.body.removeChild(link);
-};
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/pdf/fakeCV.pdf";
+    link.download = "Satyam_CV.pdf";
+    document.body.appendChild(link); // important
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="min-h-screen w-full relative overflow-hidden bg-[#0a0a0a]">

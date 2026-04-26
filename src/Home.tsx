@@ -4,7 +4,6 @@ import MainHome from "./components/MainHome";
 import MyRessume from "./components/MyRessume";
 import Portfolio from "./components/Portfolio";
 import Services from "./components/Services";
-// import Testimonials from "./components/TestiMonials";
 import NavBar from "./components/NavBar";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
@@ -33,33 +32,33 @@ const [showNavbar, setShowNavbar] = useState(false);
       <div
         className={`fixed top-0 left-0 w-full h-fit bg-white shadow z-50 transition-transform duration-300 
         ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
-      >
+        >
         <NavBar />
       </div>
+
       <div id="home">
        <MainHome />
       </div>
 
+      <div id="services">
+        <Services />
+      </div>
 
-<div id="services">
-  <Services />
-</div>
+      <div id="portfolio">
+        <Portfolio />
+      </div>
 
-<div id="portfolio">
-  <Portfolio />
-</div>
+      <div id="resume">
+        <MyRessume />
+      </div>
 
-<div id="resume">
-  <MyRessume />
-</div>
+      <div id="blog">
+        <Blog />
+      </div>
 
-<div id="blog">
-  <Blog />
-</div>
-
-<div id="contact">
-  <Contact />
-</div>
+      <div id="contact">
+        <Contact />
+      </div>
       {/* <Testimonials/> */}
       <Footer/>
     </>
